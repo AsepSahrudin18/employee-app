@@ -26,7 +26,7 @@
              <li class="sidebar-item">
                  <a class="sidebar-link" href="{{ route('employees.index') }}" aria-expanded="false">
                      <span>
-                         <i class="ti ti-article"></i>
+                         <i class="ti ti-album"></i>
                      </span>
                      <span class="hide-menu">Manage Employees</span>
                  </a>
@@ -35,7 +35,7 @@
              <li class="sidebar-item">
                  <a class="sidebar-link" href="{{ route('change.password') }}" aria-expanded="false">
                      <span>
-                         <i class="ti ti-mail fs-6"></i>
+                         <i class="ti ti-brand-samsungpass"></i>
                      </span>
                      <span class="hide-menu">Change Password</span>
                  </a>

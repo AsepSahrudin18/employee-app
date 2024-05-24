@@ -190,17 +190,49 @@
 
             // script show detail
             function showEmployeeDetails(employee) {
+                var fotoUrl = employee.foto;
+                console.log(fotoUrl)
                 Swal.fire({
-                    title: 'Employee Details',
+
                     html: `
-                <div>
-                    <strong>Nama:</strong> ${employee.nama}<br>
-                    <strong>Tanggal Lahir:</strong> ${employee.tanggal_lahir}<br>
-                    <strong>Alamat:</strong> ${employee.alamat}<br>
-                    <strong>Status Perkawinan:</strong> ${employee.status_perkawinan ? 'Married' : 'Single'}<br>
-                    <strong>Foto:</strong> <br>
-                    <img src="${employee.foto}" style="max-width: 100%;" alt="Foto Karyawan">
-                </div>
+                    <div class="alert alert-primary" role="alert">
+                        Employee Details
+                    </div>
+
+
+                    <div class="alert alert-secondary" role="alert">
+                        <div class="row">
+                            <div class="col-md-6 text-start">
+                                Nama Karyawan: 
+                            </div>
+                            <div class="col-md-6 text-start">
+                                ${employee.nama}
+                            </div>
+                            <div class="col-md-6 text-start">
+                                Tanggal Lahir: 
+                            </div>
+                            <div class="col-md-6 text-start">
+                                ${employee.tanggal_lahir}
+                            </div>
+
+                            <div class="col-md-6 text-start">
+                                Alamat: 
+                            </div>
+                            <div class="col-md-6 text-start">
+                                ${employee.alamat}
+                            </div>
+
+                            <div class="col-md-6 text-start">
+                                Status Pernikahan: 
+                            </div>
+                            <div class="col-md-6 text-start">
+                                ${employee.status_perkawinan ? 'Married' : 'Single'}
+                            </div>
+
+                            <img src="${fotoUrl}" style="max-width: 100%;" alt="Foto Karyawan">
+
+                        </div>
+                    </div>
             `,
                     showCloseButton: true,
                     showConfirmButton: false,
