@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\Auth\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,15 @@ use App\Http\Controllers\EmployeeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('/employees', EmployeeController::class);
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'checkUserToken'])->group(function () {
+    Route::get('/', [EmployeeController::class, 'index']);
+    Route::resource('/employees', EmployeeController::class);
+    // Rute yang memerlukan autentikasi dan memeriksa token pengguna
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('change-password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('change.password');
+    Route::post('change-password', [ChangePasswordController::class, 'changePassword'])->name('change.password.post');
+});
