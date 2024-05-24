@@ -4,5 +4,5 @@
     <button type="submit" class="btn btn-sm btn-danger delete-btn" data-id="{{ $employee->id }}">Delete</button>
 </form>
 
-<a href="{{ route('employees.show', $employee->id) }}" class="btn btn-sm btn-primary">View</a>
+<button onclick="showEmployeeDetails({{ $employee }})" class="btn btn-sm btn-primary">View</button>
 <button class="btn btn-sm btn-warning" onclick="fillUpdateModal({{ $employee }})">Edit</button>

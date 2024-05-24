@@ -188,6 +188,25 @@
                     }
                 });
             });
+
+            // script show detail
+            function showEmployeeDetails(employee) {
+                Swal.fire({
+                    title: 'Employee Details',
+                    html: `
+                <div>
+                    <strong>Nama:</strong> ${employee.nama}<br>
+                    <strong>Tanggal Lahir:</strong> ${employee.tanggal_lahir}<br>
+                    <strong>Alamat:</strong> ${employee.alamat}<br>
+                    <strong>Status Perkawinan:</strong> ${employee.status_perkawinan ? 'Married' : 'Single'}<br>
+                    <strong>Foto:</strong> <br>
+                    <img src="${employee.foto}" style="max-width: 100%;" alt="Foto Karyawan">
+                </div>
+            `,
+                    showCloseButton: true,
+                    showConfirmButton: false,
+                });
+            }
         </script>
     @endpush
 @endsection
