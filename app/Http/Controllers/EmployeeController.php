@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {

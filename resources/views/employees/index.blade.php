@@ -160,7 +160,6 @@
                 $('#updateEmployeeModal').modal('show');
             }
 
-            // Submit update form via Ajax
             $('#updateEmployeeForm').on('submit', function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
@@ -174,10 +173,18 @@
                     success: function(response) {
                         $('#updateEmployeeModal').modal('hide');
                         $('#employee-table').DataTable().ajax.reload();
-                        alert('Employee updated successfully.');
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Employee updated successfully.',
+                        });
                     },
                     error: function(response) {
-                        alert('An error occurred while updating the employee.');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while updating the employee.',
+                        });
                     }
                 });
             });

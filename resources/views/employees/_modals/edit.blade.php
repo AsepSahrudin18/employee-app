@@ -7,7 +7,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <form id="updateEmployeeForm" enctype="multipart/form-data">
+            <form id="updateEmployeeForm" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
                 <input type="hidden" id="employeeId" name="employeeId">
