@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h1>Employee Data</h1>
         <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createEmployeeModal">Create New
             Employee</button>
